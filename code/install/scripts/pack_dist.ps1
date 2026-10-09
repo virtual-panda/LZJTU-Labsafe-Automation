@@ -43,7 +43,13 @@ param(
     [string]$OutputDir = "",
     [switch]$Zip,
     [switch]$Force,
-    [switch]$SkipVerify
+    [switch]$SkipVerify,
+    # 关闭时间戳屏蔽。默认开启：分发包内全部文件/目录与 zip 条目的
+    # 修改时间统一重置为 2000-01-01 00:00:00，不泄露真实打包时间
+    # （与 normalize_eol.ps1 / 项目「时间戳统一」的隐私策略一致）。
+    [switch]$KeepTimestamps,
+    # 时间戳屏蔽所使用的统一时间
+    [datetime]$NeutralStamp = [datetime]"2000-01-01 00:00:00"
 )
 
 # ---------------------------------------------------------------
@@ -501,6 +507,24 @@ Write-Info "文件总数: $($allFiles.Count)"
 Write-Info "总大小  : $(Format-Size $totalSize)"
 
 # ---------------------------------------------------------------
+# 时间戳屏蔽（默认开启）
+# ---------------------------------------------------------------
+# zip 条目的修改时间取自文件的 mtime —— 不统一重置的话，
+# 分发包里会泄露每个文件的真实编辑/打包时间。
+# 目录的 mtime 也要重置（外层目录条目同样带时间）。
+if (-not $KeepTimestamps) {
+    Write-Host ""
+    Write-Info "时间戳屏蔽: 统一重置为 $($NeutralStamp.ToString('yyyy-MM-dd HH:mm:ss'))"
+    $n = 0
+    Get-ChildItem -Path $OutputDir -Recurse -Force | ForEach-Object {
+        $_.LastWriteTime = $NeutralStamp
+        $n++
+    }
+    (Get-Item $OutputDir).LastWriteTime = $NeutralStamp
+    Write-Ok "已重置 $n 个文件/目录 + 分发包根目录"
+}
+
+# ---------------------------------------------------------------
 # 可选：压缩
 # ---------------------------------------------------------------
 $zipPath = ""
@@ -526,6 +550,10 @@ if ($Zip) {
     if (Test-Path $zipPath) {
         $zipSize = (Get-Item $zipPath).Length
         Write-Ok "压缩包: $zipPath ($(Format-Size $zipSize))"
+        # zip 文件自身的 mtime 也重置（不依赖 -KeepTimestamps 之外的状态）
+        if (-not $KeepTimestamps) {
+            (Get-Item $zipPath).LastWriteTime = $NeutralStamp
+        }
     } else {
         Write-Warn "压缩似乎没有成功，但文件夹已经生成好了，可以直接用。"
         $zipPath = ""
