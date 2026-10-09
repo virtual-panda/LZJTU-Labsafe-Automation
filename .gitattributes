@@ -2,11 +2,15 @@
 #  换行符与文件类型规范
 # ---------------------------------------------------------------------
 #  这个文件很重要：
-#   1. .bat 若在 checkout 时被转成 LF，双击运行会报
-#      「不是内部或外部命令」这类莫名其妙的错误。
+#   1. 本项目只面向 Windows，所有文本文件统一 CRLF
+#      （.bat 必须 CRLF 才能被 cmd 正确解析；其余在 Windows 上无副作用）。
+#      这里写死 eol=crlf 后，**无论开发者本地怎么配置 core.autocrlf**，
+#      clone 出来都是 CRLF —— 不依赖任何本地设置。
 #   2. install\ 目录受 SHA256SUMS.txt 的**字节级**自检保护，
-#      任何行尾往返改写都会让安装脚本第 0 步校验失败 ——
-#      所以最后一条规则把整个 install\ 目录排除在规范化之外。
+#      最后一条规则把整个 install\ 目录排除在规范化之外，
+#      clone 后与提交时逐字节一致。
+#   3. normalize_eol.ps1 会在 checksum / 打包 / 安装自检前再把工作区
+#      文件统一一遍 CRLF，与这里的规则互为兜底。
 # =====================================================================
 
 # --- 批处理脚本必须是 CRLF，否则 cmd 无法正确解析 ---
@@ -16,16 +20,22 @@
 # --- PowerShell 脚本用 CRLF（Windows 习惯，也避免 PS 5.1 出意外）---
 *.ps1  text eol=crlf
 
-# --- Python 用 LF ---
-*.py   text eol=lf
-
-# --- 文本配置 ---
-*.txt  text eol=lf
-*.md   text eol=lf
-*.json text eol=lf
-*.toml text eol=lf
-.gitignore     text eol=lf
-.gitattributes text eol=lf
+# --- 以下文本全部 CRLF（本项目只面向 Windows）---
+*.py   text eol=crlf
+*.txt  text eol=crlf
+*.md   text eol=crlf
+*.json text eol=crlf
+*.toml text eol=crlf
+*.html text eol=crlf
+*.htm  text eol=crlf
+*.cs   text eol=crlf
+*.csproj text eol=crlf
+*.cfg  text eol=crlf
+*.ini  text eol=crlf
+*.yml  text eol=crlf
+*.yaml text eol=crlf
+.gitignore     text eol=crlf
+.gitattributes text eol=crlf
 
 # --- 二进制文件，不要做任何换行或编码转换 ---
 *.whl    binary
@@ -38,6 +48,7 @@
 *.gz     binary
 *.zip    binary
 *.pyc    binary
+*.db     binary
 
 # --- install\ 目录：字节原样入库（必须放在最后，覆盖上面所有通配符）---
 # SHA256SUMS.txt 记录的是这些文件当前的字节级 SHA256，

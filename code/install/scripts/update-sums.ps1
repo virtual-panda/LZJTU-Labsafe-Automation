@@ -17,6 +17,11 @@ $ErrorActionPreference = "Stop"
 $ScriptDir   = Split-Path -Parent $MyInvocation.MyCommand.Path
 $InstallRoot = Split-Path -Parent $ScriptDir
 
+# 生成清单前先把全部文本统一为 CRLF —— SHA256SUMS.txt 记录的是
+# 「全部 CRLF」状态的哈希，与 install_offline.ps1 的自检、
+# normalize_eol.ps1 三方保持一致。
+& (Join-Path $ScriptDir "normalize_eol.ps1") -Quiet
+
 # 收集要校验的文件（注意：SHA256SUMS.txt 本身不入清单）
 $files = New-Object System.Collections.Generic.List[string]
 foreach ($sub in @("python", "packages", "vcruntime", "scripts")) {

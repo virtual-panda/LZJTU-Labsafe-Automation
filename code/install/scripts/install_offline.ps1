@@ -207,6 +207,14 @@ Write-Host ""
 # ---------------------------------------------------------------
 # 0. 前置检查：离线包是否齐全
 # ---------------------------------------------------------------
+# 先把全部文本文件统一为 CRLF：克隆 / 拷贝过程中行尾可能被改写，
+# 而下面的 SHA256 自检是字节级的。规范化后再校验才能对得上
+# SHA256SUMS.txt（它记录的就是「全部 CRLF」状态的哈希）。
+$NormalizeScript = Join-Path $ScriptDir "normalize_eol.ps1"
+if (Test-Path $NormalizeScript) {
+    & $NormalizeScript -Quiet
+}
+
 Write-Step "0/6 检查离线安装包完整性"
 
 $requiredPaths = @(

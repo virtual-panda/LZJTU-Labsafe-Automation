@@ -227,6 +227,10 @@ Write-Ok "输出目录就绪"
 # ---------------------------------------------------------------
 Write-Step "2/4 复制项目文件"
 
+# 复制前把全部文本文件统一为 CRLF：分发包内的行尾状态与
+# SHA256SUMS.txt 的自检基准保持一致，也保证 .bat 永远可双击。
+& (Join-Path $ScriptDir "normalize_eol.ps1") -Root $ProjRoot -Quiet
+
 # 优先用 robocopy：它处理大量小文件比 Copy-Item 快很多，
 # 而且原生支持排除目录/文件。
 $roboArgs = @(
