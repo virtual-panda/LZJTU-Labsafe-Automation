@@ -413,15 +413,26 @@ if (-not $SkipVerify) {
     )
 
     $missing = @()
+    $softMissing = @()   # 源目录本来就没有 → 警告而非错误
+                         # （如 git clone 场景：启动程序.exe 不入库、便携终端被忽略）
     foreach ($rel in $required) {
-        if (-not (Test-Path (Join-Path $OutputDir $rel))) { $missing += $rel }
+        if (-not (Test-Path (Join-Path $OutputDir $rel))) {
+            if (Test-Path (Join-Path $ProjRoot $rel)) { $missing += $rel }
+            else { $softMissing += $rel }
+        }
+    }
+    if ($softMissing.Count -gt 0) {
+        Write-Warn "以下文件源目录就不存在（clone 后未编译/未获取），分发包将缺少它们:"
+        $softMissing | ForEach-Object { Write-Host "         $_" -ForegroundColor Yellow }
+        Write-Warn "不影响安装与基本使用；需要时用 build.ps1 编译启动器、按文档获取便携终端。"
     }
     if ($missing.Count -gt 0) {
-        Write-Err "缺少关键文件:"
+        Write-Err "缺少关键文件（源目录有、分发包没有 —— 复制出了问题）:"
         $missing | ForEach-Object { Write-Host "         $_" -ForegroundColor Red }
         $problem++
-    } else {
-        Write-Ok "关键文件齐全（$($required.Count) 项）"
+    }
+    if ($missing.Count -eq 0) {
+        Write-Ok "关键文件齐全（$($required.Count) 项，其中 $($softMissing.Count) 项源缺失已警告）"
     }
 
     # 4a-2. 终端背景图
