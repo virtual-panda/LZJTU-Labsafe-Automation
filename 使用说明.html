@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>使用说明 · 实验室安全教育平台自动化工具</title>
+<style>
+  :root {
+    --fg: #1c1c1c;
+    --muted: #6b6b6b;
+    --line: #d6d6d6;
+    --soft: #f5f5f4;
+    --accent: #0a5bb5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #fff;
+    color: var(--fg);
+    font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  main {
+    max-width: 44em;
+    margin: 0 auto;
+    padding: 3em 1.5em 4em;
+  }
+  h1 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0 0 .2em;
+  }
+  .subtitle {
+    color: var(--muted);
+    margin: 0 0 0;
+  }
+  header { border-bottom: 2px solid var(--fg); padding-bottom: 1.1em; margin-bottom: 1.6em; }
+  h2 {
+    font-size: 1.02rem;
+    font-weight: 600;
+    margin: 2.4em 0 .6em;
+  }
+  h2 .no {
+    display: inline-block;
+    width: 1.55em;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  p { margin: .6em 0; }
+  ul, ol { margin: .5em 0; padding-left: 1.6em; }
+  li { margin: .25em 0; }
+  code, kbd {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: .92em;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: .08em .35em;
+    white-space: nowrap;
+  }
+  pre code {
+    display: block;
+    white-space: pre;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  table {
+    border-collapse: collapse;
+    margin: .8em 0 1.2em;
+    font-size: .93rem;
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: .4em .9em;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--soft); font-weight: 600; }
+  .note {
+    border-left: 3px solid #9c9c9c;
+    background: var(--soft);
+    padding: .6em 1em;
+    margin: 1em 0;
+    color: #3a3a3a;
+  }
+  .warning {
+    border-left: 3px solid #8c1f11;
+    background: #faf3f2;
+    padding: .7em 1em;
+    margin: 1.2em 0;
+  }
+  .warning p { margin: .3em 0; }
+  .warning strong { color: #8c1f11; }
+  footer {
+    margin-top: 3.5em;
+    border-top: 1px solid var(--line);
+    padding-top: .9em;
+    color: var(--muted);
+    font-size: .85rem;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>实验室安全教育平台自动化工具</h1>
+  <p class="subtitle">兰州交通大学 · 使用说明</p>
+</header>
+
+<p>本工具用于自动完成实验室安全教育平台的学时部分。课程信息密度低，建议用本工具刷完学时后，像考科目一那样自行刷题备考。</p>
+
+<div class="warning">
+  <p><strong>本程序不会替你完成刷题环节。</strong>驾校教练可以代打学时，但科目二必须本人上阵。</p>
+  <p>你必须自行完成刷题并保证正确率 —— <strong>考试机会只有一次。</strong></p>
+</div>
+
+<h2><span class="no">一、</span>确认系统要求</h2>
+<ul>
+  <li>系统为 Windows 10 或 Windows 11</li>
+  <li>已安装 Microsoft Edge 浏览器（一般设备自带）</li>
+</ul>
+
+<table>
+  <tr><th>功能</th><th>Windows 10</th><th>Windows 10（2004 之前）</th><th>Windows 11</th></tr>
+  <tr><td>一键离线安装</td><td>支持</td><td>支持</td><td>支持</td></tr>
+  <tr><td>基本刷课</td><td>支持</td><td>支持</td><td>支持</td></tr>
+  <tr><td>自带的现代化终端</td><td>支持</td><td>不支持</td><td>支持</td></tr>
+</table>
+
+<p class="note">终端旧于 Windows 10 2004 时，程序会自动改用系统默认控制台运行，功能不受影响，只是界面朴素一些。</p>
+
+<h2><span class="no">二、</span>调节屏幕设置</h2>
+<ul>
+  <li>分辨率改为 <code>1920 × 1080</code></li>
+  <li>缩放比调整为 <code>100%</code></li>
+  <li>关闭 HDR</li>
+</ul>
+<p>找不到设置入口可参考：<a href="https://support.microsoft.com/zh-cn/windows/hardware/display-graphics/change-your-screen-resolution-and-layout-in-windows">调整 Windows 屏幕分辨率（微软官方教程）</a></p>
+
+<h2><span class="no">三、</span>一键安装并开始使用</h2>
+<p>双击本目录下的 <code>启动程序.exe</code> 即可。</p>
+<ol>
+  <li>第一次运行会询问「是否安装运行环境」，选择「是」</li>
+  <li>之后自动完成配置：安装 Python、创建虚拟环境、安装全部依赖（均包含在程序内，<strong>无需联网</strong>，也<strong>不需要管理员权限</strong>），约 1～2 分钟</li>
+  <li>装完会自动接着启动主程序</li>
+</ol>
+<p>以后每次使用仍然只双击 <code>启动程序.exe</code> —— 它检测到环境就绪后会直接启动，不再询问。</p>
+
+<h2><span class="no">四、</span>备用启动方式</h2>
+<p>若启动器无法打开，可手动依次执行（与启动器内部调用完全相同）：</p>
+<pre style="font-family: Consolas, monospace; font-size: .92em; background: var(--soft); border: 1px solid var(--line); padding: .8em 1em; overflow-x: auto;"><code>code\install\scripts\install.bat    先安装环境（只需一次）
+code\run.bat                        再启动程序</code></pre>
+
+<h2><span class="no">五、</span>常见问题</h2>
+<ul>
+  <li><strong>双击没有反应？</strong>先用第四节的办法试一试；还是不行的话，把情况告诉开发者。</li>
+  <li><strong>提示「系统禁止运行脚本」之类的红字？</strong>这台电脑可能被学校或公司统一管理，自己解不开，请联系机房管理员，或换一台个人电脑使用。</li>
+  <li><strong>想更换终端背景图？</strong>用自己的图片替换 <code>code\tools\WindowsTerminal\settings\bg.png</code> 即可，建议用深色、不太鲜艳的图，避免盖过文字。</li>
+</ul>
+
+<h2><span class="no">六、</span>高级</h2>
+<p>以下内容供排查问题时使用，普通使用不需要碰。</p>
+<ul>
+  <li><strong>查看启动器的工作过程：</strong>先给系统添加环境变量 <code>LABSEC_LAUNCHER_DEBUG</code>，值为 <code>1</code>，再运行「启动程序.exe」—— 程序目录会生成 <code>launcher_debug.log</code>，记录它每一步做了什么、为什么失败。</li>
+  <li><strong>彻底重装运行环境：</strong>删除 <code>code\.venv</code> 文件夹，再运行一次安装（第四节第一行那个 <code>install.bat</code>，或重新用启动器引导）。</li>
+  <li><strong>「禁止运行脚本」的原因：</strong>Windows 的 PowerShell 执行策略被组策略锁定，命令行参数绕不过去；详细原理与对策见 <code>code\install\README.md</code> 的「关于 PowerShell 执行策略」一节。</li>
+  <li><strong>报错提到 DLL 加载失败？</strong>运行 <code>code\install\scripts\diag_vcruntime.py</code>（用 <code>code\.venv\Scripts\python.exe</code> 执行），它会指出具体缺哪个文件。</li>
+</ul>
+
+<footer>
+  运行期间请勿关闭程序所在的终端窗口。需要紧急停止时，把鼠标快速甩到屏幕左上角（内置的安全机制）。
+</footer>
+
+</main>
+</body>
+</html>

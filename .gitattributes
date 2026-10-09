@@ -1,0 +1,45 @@
+# =====================================================================
+#  换行符与文件类型规范
+# ---------------------------------------------------------------------
+#  这个文件很重要：
+#   1. .bat 若在 checkout 时被转成 LF，双击运行会报
+#      「不是内部或外部命令」这类莫名其妙的错误。
+#   2. install\ 目录受 SHA256SUMS.txt 的**字节级**自检保护，
+#      任何行尾往返改写都会让安装脚本第 0 步校验失败 ——
+#      所以最后一条规则把整个 install\ 目录排除在规范化之外。
+# =====================================================================
+
+# --- 批处理脚本必须是 CRLF，否则 cmd 无法正确解析 ---
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# --- PowerShell 脚本用 CRLF（Windows 习惯，也避免 PS 5.1 出意外）---
+*.ps1  text eol=crlf
+
+# --- Python 用 LF ---
+*.py   text eol=lf
+
+# --- 文本配置 ---
+*.txt  text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+.gitignore     text eol=lf
+.gitattributes text eol=lf
+
+# --- 二进制文件，不要做任何换行或编码转换 ---
+*.whl    binary
+*.exe    binary
+*.dll    binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.bmp    binary
+*.gz     binary
+*.zip    binary
+*.pyc    binary
+
+# --- install\ 目录：字节原样入库（必须放在最后，覆盖上面所有通配符）---
+# SHA256SUMS.txt 记录的是这些文件当前的字节级 SHA256，
+# clone 后必须与提交时逐字节一致，离线安装自检才能通过。
+code/install/** -text

@@ -1,0 +1,114 @@
+{
+    "code": 200,
+    "message": "OK",
+    "data": {
+        "content": [
+            {
+                "tableCode": 10,
+                "id": 38,
+                "title": "实验室安全检查及应急救援 - 前言",
+                "mustStudy": 1,
+                "requireStudyLength": 600,
+                "studyLength": 0,
+                "practiceStatus": 0,
+                "examRequestId": null,
+                "doingStudyId": null,
+                "courseId": null,
+                "periodType": null,
+                "subjectList": null,
+                "paperRuleId": null,
+                "finish": false
+            },
+            {
+                "tableCode": 10,
+                "id": 39,
+                "title": "实验室安全检查及应急救援 - 实验室安全指标检查（上）",
+                "mustStudy": 1,
+                "requireStudyLength": 1320,
+                "studyLength": 0,
+                "practiceStatus": 0,
+                "examRequestId": null,
+                "doingStudyId": null,
+                "courseId": null,
+                "periodType": null,
+                "subjectList": null,
+                "paperRuleId": null,
+                "finish": false
+            },
+            {
+                "tableCode": 10,
+                "id": 40,
+                "title": "实验室安全检查及应急救援 - 实验室安全指标检查（下）",
+                "mustStudy": 1,
+                "requireStudyLength": 1140,
+                "studyLength": 0,
+                "practiceStatus": 0,
+                "examRequestId": null,
+                "doingStudyId": null,
+                "courseId": null,
+                "periodType": null,
+                "subjectList": null,
+                "paperRuleId": null,
+                "finish": false
+            },
+            {
+                "tableCode": 10,
+                "id": 41,
+                "title": "实验室安全检查及应急救援 - 教育部实验室安全监督实践",
+                "mustStudy": 1,
+                "requireStudyLength": 540,
+                "studyLength": 0,
+                "practiceStatus": 0,
+                "examRequestId": null,
+                "doingStudyId": null,
+                "courseId": null,
+                "periodType": null,
+                "subjectList": null,
+                "paperRuleId": null,
+                "finish": false
+            },
+            {
+                "tableCode": 10,
+                "id": 42,
+                "title": "实验室安全检查及应急救援 - 应急救援",
+                "mustStudy": 1,
+                "requireStudyLength": 1620,
+                "studyLength": 0,
+                "practiceStatus": 0,
+                "examRequestId": null,
+                "doingStudyId": null,
+                "courseId": null,
+                "periodType": null,
+                "subjectList": null,
+                "paperRuleId": null,
+                "finish": false
+            }
+        ],
+        "pageable": {
+            "sort": {
+                "sorted": true,
+                "unsorted": false,
+                "empty": false
+            },
+            "pageNumber": 1,
+            "pageSize": 20,
+            "offset": 20,
+            "paged": true,
+            "unpaged": false
+        },
+        "last": true,
+        "totalElements": 25,
+        "totalPages": 2,
+        "sort": {
+            "sorted": true,
+            "unsorted": false,
+            "empty": false
+        },
+        "numberOfElements": 5,
+        "first": false,
+        "size": 20,
+        "number": 1,
+        "empty": false
+    },
+    "messageEn": "OK"
+}

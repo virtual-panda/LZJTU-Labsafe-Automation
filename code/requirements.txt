@@ -1,0 +1,23 @@
+# LabSecAutomation - Python 依赖
+# 环境：Windows（pywin32 仅支持 Windows）
+# Python：>=3.9（本机实测 3.14.7）
+
+# --- 图像识别 / 屏幕定位 ---
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# --- GUI 自动化 / 截图 ---
+PyAutoGUI>=0.9.54
+PyScreeze>=1.0.0
+mss>=9.0.0
+Pillow>=10.0.0
+
+# --- OCR（locate_and_ocr.py 使用）---
+rapidocr>=3.0.0
+onnxruntime>=1.16.0
+
+# --- 命令行交互（demo.py 使用）---
+inputimeout>=1.0.4
+
+# --- Windows 窗口操作（edge_win.py 使用，仅 Windows）---
+pywin32>=306; sys_platform == "win32"

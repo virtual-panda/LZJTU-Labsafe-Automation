@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- ===================================================================
+       LabSecAutomation 启动器
+
+       编译成 NativeAOT 原生程序：
+         - 不依赖 .NET Framework，也不依赖 .NET 运行时
+         - 目标机器上什么都不用装，双击就能跑
+       编译：见同目录 build.ps1
+       =================================================================== -->
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>LabSecLauncher</AssemblyName>
+    <RootNamespace>LabSecLauncher</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Platforms>x64</Platforms>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+
+    <!-- LibraryImport 源生成器需要它（否则报 SYSLIB1062 / CS0227） -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <!-- 核心：编译为原生代码，零运行时依赖 -->
+    <PublishAot>true</PublishAot>
+    <SelfContained>true</SelfContained>
+
+    <!-- 瘦身：这个程序不需要全球化、事件源、堆栈跟踪等设施 -->
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <UseSystemResourceKeys>true</UseSystemResourceKeys>
+    <EventSourceSupport>false</EventSourceSupport>
+    <StackTraceSupport>false</StackTraceSupport>
+    <MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+    <AutoreleasePoolSupport>false</AutoreleasePoolSupport>
+    <OptimizationPreference>Size</OptimizationPreference>
+    <IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+    <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+
+    <!-- 关掉各种编译期噪音 -->
+    <EnableTrimAnalyzer>false</EnableTrimAnalyzer>
+    <EnableAotAnalyzer>false</EnableAotAnalyzer>
+    <EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
+    <SuppressTrimAnalysisWarnings>true</SuppressTrimAnalysisWarnings>
+    <TrimmerSingleWarn>false</TrimmerSingleWarn>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <DebugType>none</DebugType>
+
+    <!-- CA1416：注册表 API 只在 Windows 可用。本程序本来就只跑 Windows，无需警告。 -->
+    <NoWarn>$(NoWarn);CA1416</NoWarn>
+  </PropertyGroup>
+
+</Project>

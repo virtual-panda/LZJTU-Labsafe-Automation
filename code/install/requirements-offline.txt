@@ -1,0 +1,41 @@
+# ============================================================
+# LabSecAutomation 离线安装依赖清单（锁版本）
+# 目标运行时：Windows x64 + CPython 3.14
+# 生成用途：配合 install/ 目录下的离线包做纯离线安装
+# ============================================================
+#
+# 说明：
+#   - 本文件用 == 精确锁定版本，保证离线包内容确定、可复现。
+#   - 标注 [sdist] 的包在 PyPI 上没有 wheel，只有源码包；
+#     它们是纯 Python 包，安装时 pip 用本地 setuptools 现场构建，
+#     不需要 C/C++ 编译器。
+#   - 请使用 scripts/install_offline.ps1 安装，不要直接 pip install。
+# ============================================================
+
+# --- 数值计算 / 图像处理 ---
+numpy==2.5.2
+opencv-python==5.0.0.93
+
+# --- 屏幕截图 ---
+Pillow==12.3.0
+mss==10.2.0
+
+# --- GUI 自动化 ---
+PyAutoGUI==0.9.54          # [sdist] 纯 Python
+PyScreeze==0.1.30          # [sdist] 纯 Python
+PyMsgBox==2.0.1
+PyTweening==1.2.0          # [sdist] 纯 Python
+PyGetWindow==0.0.9         # [sdist] 纯 Python
+PyRect==0.2.0              # [sdist] 纯 Python
+MouseInfo==0.1.3           # [sdist] 纯 Python
+pyperclip==1.9.0           # [sdist] 纯 Python
+
+# --- 命令行交互（demo.py 使用）---
+inputimeout==1.0.4
+
+# --- OCR ---
+rapidocr==3.9.2
+onnxruntime==1.30.0
+
+# --- Windows 窗口操作（仅 Windows）---
+pywin32==312; sys_platform == "win32"

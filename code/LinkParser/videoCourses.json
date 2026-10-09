@@ -1,0 +1,139 @@
+{
+    "links": [
+        {
+            "courseName": "高校实验室安全技术概论 - 实验室安全事故案例",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=1&requireStudyLength=1380&studyLength=0&examId=78",
+            "requiredStudyTime": "1380"
+        },
+        {
+            "courseName": "高校实验室安全技术概论 - 高校实验室安全工作概要",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=2&requireStudyLength=720&studyLength=0&examId=78",
+            "requiredStudyTime": "720"
+        },
+        {
+            "courseName": "高校实验室安全技术概论 - 安全事故致因理论",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=3&requireStudyLength=300&studyLength=0&examId=78",
+            "requiredStudyTime": "300"
+        },
+        {
+            "courseName": "高校实验室安全技术概论 - 实验室安全管理体系",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=4&requireStudyLength=900&studyLength=0&examId=78",
+            "requiredStudyTime": "900"
+        },
+        {
+            "courseName": "高校实验室安全技术概论 - 关于信息化技术的应用",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=5&requireStudyLength=1080&studyLength=0&examId=78",
+            "requiredStudyTime": "1080"
+        },
+        {
+            "courseName": "实验室安全文化与素养 - 前言",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=6&requireStudyLength=180&studyLength=0&examId=78",
+            "requiredStudyTime": "180"
+        },
+        {
+            "courseName": "实验室安全文化与素养 - 安全文化",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=7&requireStudyLength=480&studyLength=0&examId=78",
+            "requiredStudyTime": "480"
+        },
+        {
+            "courseName": "实验室安全文化与素养 - 实验室安全文化（上）",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=8&requireStudyLength=900&studyLength=0&examId=78",
+            "requiredStudyTime": "900"
+        },
+        {
+            "courseName": "实验室安全文化与素养 - 实验室安全文化（下）",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=9&requireStudyLength=1020&studyLength=0&examId=78",
+            "requiredStudyTime": "1020"
+        },
+        {
+            "courseName": "实验室安全文化与素养 - 实验室安全素养（下）",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=11&requireStudyLength=1560&studyLength=0&examId=78",
+            "requiredStudyTime": "1560"
+        },
+        {
+            "courseName": "实验室安全文化与素养 - 结语",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=12&requireStudyLength=120&studyLength=0&examId=78",
+            "requiredStudyTime": "120"
+        },
+        {
+            "courseName": "实验室化学安全与防护 - 实验室化学事故",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=13&requireStudyLength=840&studyLength=0&examId=78",
+            "requiredStudyTime": "840"
+        },
+        {
+            "courseName": "实验室化学安全与防护 - 燃烧与爆炸化学事故",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=14&requireStudyLength=1740&studyLength=0&examId=78",
+            "requiredStudyTime": "1740"
+        },
+        {
+            "courseName": "实验室化学安全与防护 - 化学中毒与预防",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=15&requireStudyLength=540&studyLength=0&examId=78",
+            "requiredStudyTime": "540"
+        },
+        {
+            "courseName": "实验室化学安全与防护 - 危险化学品的分类与采购及保管",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=16&requireStudyLength=480&studyLength=0&examId=78",
+            "requiredStudyTime": "480"
+        },
+        {
+            "courseName": "实验室化学安全与防护 - 化学品的安全使用",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=17&requireStudyLength=780&studyLength=0&examId=78",
+            "requiredStudyTime": "780"
+        },
+        {
+            "courseName": "实验室化学安全与防护 - 气体的安全使用",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=18&requireStudyLength=420&studyLength=0&examId=78",
+            "requiredStudyTime": "420"
+        },
+        {
+            "courseName": "机电、特种设备与其他安全 - 水电安全",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=26&requireStudyLength=1140&studyLength=0&examId=78",
+            "requiredStudyTime": "1140"
+        },
+        {
+            "courseName": "机电、特种设备与其他安全 - 消防安全",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=27&requireStudyLength=1260&studyLength=0&examId=78",
+            "requiredStudyTime": "1260"
+        },
+        {
+            "courseName": "机电、特种设备与其他安全 - 特种设备安全",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=28&requireStudyLength=1020&studyLength=0&examId=78",
+            "requiredStudyTime": "1020"
+        },
+        {
+            "courseName": "机电、特种设备与其他安全 - 辐射安全",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=29&requireStudyLength=720&studyLength=0&examId=78",
+            "requiredStudyTime": "720"
+        },
+        {
+            "courseName": "机电、特种设备与其他安全 - 机械加工安全",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=31&requireStudyLength=480&studyLength=0&examId=78",
+            "requiredStudyTime": "480"
+        },
+        {
+            "courseName": "实验室安全检查及应急救援 - 前言",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=38&requireStudyLength=600&studyLength=0&examId=78",
+            "requiredStudyTime": "600"
+        },
+        {
+            "courseName": "实验室安全检查及应急救援 - 实验室安全指标检查（上）",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=39&requireStudyLength=1320&studyLength=0&examId=78",
+            "requiredStudyTime": "1320"
+        },
+        {
+            "courseName": "实验室安全检查及应急救援 - 实验室安全指标检查（下）",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=40&requireStudyLength=1140&studyLength=0&examId=78",
+            "requiredStudyTime": "1140"
+        },
+        {
+            "courseName": "实验室安全检查及应急救援 - 教育部实验室安全监督实践",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=41&requireStudyLength=540&studyLength=0&examId=78",
+            "requiredStudyTime": "540"
+        },
+        {
+            "courseName": "实验室安全检查及应急救援 - 应急救援",
+            "url": "https://labsafe.lzjtu.edu.cn/lab-study-front/coursePlayer?periodId=42&requireStudyLength=1620&studyLength=0&examId=78",
+            "requiredStudyTime": "1620"
+        }
+    ]
+}

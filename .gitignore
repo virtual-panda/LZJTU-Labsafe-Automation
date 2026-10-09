@@ -1,0 +1,126 @@
+# =====================================================================
+# LabSecAutomation  .gitignore
+# ---------------------------------------------------------------------
+# 维护约定：
+#   1. 「分发排除」一节必须与 install\scripts\pack_dist.ps1 的
+#      $ExcludeDirs / $ExcludeFiles 保持同步 —— 两处改一处要改另一处。
+#   2. Python 安装程序（install/python）与依赖 wheel（install/packages）
+#      **必须入库**：目标是 clone 下来即为可直接安装运行的完整状态。
+#   3. 其余是 git / Python 工具链特有的忽略项，与 pack 无关。
+# =====================================================================
+
+# ---------------------------------------------------------------
+# 分发排除 —— 与 pack_dist.ps1 的 $ExcludeDirs 同步（按名字匹配任意层级）
+# ---------------------------------------------------------------
+
+# 虚拟环境（重点：绝不入库）
+.venv/
+venv/
+env/
+ENV/
+
+# Python 字节码缓存
+__pycache__/
+
+# 版本库（嵌套仓库残留）
+.git/
+
+# IDE 配置
+.idea/
+.vscode/
+
+# 程序运行时的调试输出
+debug/
+
+# .NET / NativeAOT 编译中间产物（很大）
+bin/
+obj/
+publish/
+
+*.egg-info/
+
+# ---- AI / Agent 工具的配置与工作目录（本机开发痕迹）----
+# 名单按「常见程度」维护，遇到新的往里加即可
+.opencode/
+.mimcode/
+.claude/
+.workbuddy/
+.codebuddy/
+.cursor/
+.windsurf/
+.codeium/
+.continue/
+.aider/
+.gemini/
+.copilot/
+.qwen/
+.trae/
+.roo/
+.cline/
+.junie/
+.agents/
+
+# ---------------------------------------------------------------
+# 分发排除 —— 与 pack_dist.ps1 的 $ExcludeFiles 同步
+# ---------------------------------------------------------------
+
+# WT 的运行时状态（含本机 profile GUID）
+state.json
+
+*.pyc
+*.pyo
+*.py[cod]
+*$py.class
+*.log
+
+Thumbs.db
+Desktop.ini
+.DS_Store
+screenshot_*.png
+
+# ---- AI / Agent 工具的散装配置文件 ----
+AGENTS.md
+CLAUDE.md
+.clinerules
+.cursorrules
+.cursorignore
+.windsurfrules
+.aider*
+.mcp.json
+.opencode.json
+
+# ---------------------------------------------------------------
+# 便携版 Windows Terminal（35 MB）
+#   pack 会分发它，但 git 不收：没有它程序也能跑（自动降级到系统
+#   默认控制台）。获取方式见 code/docs/终端美化方案.md。
+#   若希望 clone 下来连美化终端也齐，删掉下面这行即可。
+# ---------------------------------------------------------------
+code/tools/WindowsTerminal/
+
+# ---------------------------------------------------------------
+# 启动器编译产物
+#   不入库：exe 这类未签名的原生二进制容易引发安全软件误报，
+#   而且可由 code\tools\launcher\build.ps1 随时重新编译。
+# ---------------------------------------------------------------
+启动程序.exe
+launcher_debug.log
+
+# ---------------------------------------------------------------
+# Python 工具链（git 特有，pack 不涉及）
+# ---------------------------------------------------------------
+*.so
+.Python
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---------------------------------------------------------------
+# 编辑器临时文件
+# ---------------------------------------------------------------
+*.swp
+*.swo
+*~
